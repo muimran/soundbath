@@ -25,7 +25,7 @@ jobs:
           pip install requests
       - name: execute python script
         run: |
-          python api.py
+          python scripts/api.py
         working-directory: scripts
       - name: commit changes
         run: |
