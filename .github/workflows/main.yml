@@ -25,7 +25,8 @@ jobs:
           pip install requests
       - name: execute python script
         run: |
-          python scripts/api.py
+          python api.py
+        working-directory: scripts
       - name: commit changes
         run: |
           git config user.email "imran271828@gmail.com"
