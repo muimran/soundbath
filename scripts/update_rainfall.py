@@ -3,8 +3,8 @@ import json
 import os
 
 # Define the paths to the files
-csv_file_path = os.path.join('web', 'data', 'coordinates_rainfall_data.csv')
-geojson_file_path = os.path.join('web', 'data', 'myData.geojson')
+csv_file_path = '../web/data/coordinates_rainfall_data.csv'
+geojson_file_path = '../web/data/myData.geojson'
 
 # Read the CSV data
 with open(csv_file_path, newline='') as csvfile:
