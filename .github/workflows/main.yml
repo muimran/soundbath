@@ -34,6 +34,11 @@ jobs:
           git add .
           git commit -m 'update data from API'
           git push
+      - name: Upload artifact after getting data
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './web'
+          name: 'github-pages'
       - name: Deploy after getting data
         uses: actions/deploy-pages@v4
 
@@ -59,6 +64,11 @@ jobs:
           git config user.name "Muhammad Imran"
           git add .
           git diff --staged --quiet || (git commit -m 'update GeoJSON with rainfall data' && git push)
+      - name: Upload artifact after updating rainfall
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './web'
+          name: 'github-pages'
       - name: Deploy after updating rainfall
         uses: actions/deploy-pages@v4
 
@@ -68,5 +78,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Upload final artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './web'
+          name: 'github-pages'
       - name: Deploy final version to GitHub Pages
         uses: actions/deploy-pages@v4
