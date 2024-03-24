@@ -37,7 +37,7 @@ jobs:
           git config user.name "Muhammad Imran"
           git fetch  # Fetches the latest changes from the remote but doesn't merge
           git checkout origin/main -- scripts/coordinates_rainfall_data.csv  # Check out only the specific file
-          git add scripts/coordinates_rainfall_data.csv  # Add only the specific file
+          git add web/data/coordinates_rainfall_data.csv  # Add only the specific file
           git commit -m 'update coordinates_rainfall_data.csv'
           git push
 
