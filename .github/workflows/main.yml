@@ -16,20 +16,17 @@ jobs:
     steps:
       - name: checkout repo
         uses: actions/checkout@v4
-
       - name: setup python
         uses: actions/setup-python@v5
         with:
           python-version: 3.12
-
       - name: install deps
         run: |
           pip install requests
-
       - name: execute python script
         run: |
-          python scripts/api.py
-
+          python api.py
+        working-directory: scripts
       - name: commit changes
         run: |
           git config user.email "imran271828@gmail.com"
@@ -37,8 +34,6 @@ jobs:
           git add .
           git commit -m 'update'
           git push
-
-
   deploy:
     needs: getdata
     runs-on: ubuntu-latest
