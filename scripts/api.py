@@ -126,7 +126,7 @@ for station_data in wales_rainfall_data:
         combined_data.append([lat_long_key, rainfall, 'Wales'])
 
 # Update existing CSV with rainfall data
-filename = "../../web/data/coordinates_rainfall_data.csv"
+filename = "web/data/coordinates_rainfall_data.csv"
 with open(filename, mode='r', newline='', encoding='utf-8') as file:
     reader = csv.DictReader(file)
     existing_data = list(reader)
