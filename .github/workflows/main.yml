@@ -34,13 +34,7 @@ jobs:
           git add .
           git commit -m 'update data from API'
           git push
-      - name: Upload artifact after getting data
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: './web'
-          name: 'github-pages'
-      - name: Deploy after getting data
-        uses: actions/deploy-pages@v4
+    
 
   update_rainfall:
     needs: getdata
