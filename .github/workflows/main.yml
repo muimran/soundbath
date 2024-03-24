@@ -29,7 +29,7 @@ jobs:
       - name: execute python script
         run: |
           python api.py
-        working-directory: scripts
+        working-directory: ./scripts
 
       - name: commit changes
         run: |
