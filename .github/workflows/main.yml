@@ -63,7 +63,7 @@ jobs:
           git config user.email "imran271828@gmail.com"
           git config user.name "Muhammad Imran"
           git add .
-          git diff --staged --quiet || (git commit -m 'update GeoJSON with rainfall data' && git push)
+          git commit -m 'update GeoJSON with rainfall data' || echo 'No changes to commit'
           git push --force
 
       - name: Upload artifact after updating rainfall
