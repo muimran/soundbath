@@ -46,8 +46,8 @@ jobs:
     needs: getdata
     runs-on: ubuntu-latest
     steps:
-      - name: wait for 1 minute
-        run: sleep 60
+      - name: wait for 45 seconds
+        run: sleep 45
       - name: checkout repo
         uses: actions/checkout@v4
       - name: setup python
