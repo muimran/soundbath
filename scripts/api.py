@@ -1,6 +1,9 @@
 import requests
 import csv
 from datetime import datetime
+import os
+print("Current Working Directory: ", os.getcwd())
+
 
 # Function to safely convert to float
 def safe_float_convert(value, default=None):
