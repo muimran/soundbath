@@ -2,7 +2,7 @@ name: update-from-api
 
 on:
   schedule:
-    - cron: "*/60 * * * *"
+    - cron: "*/15 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -26,6 +26,7 @@ jobs:
       - name: execute python script
         run: |
           python scripts/api.py
+        working-directory: scripts
       - name: commit changes
         run: |
           git config user.email "imran271828@gmail.com"
