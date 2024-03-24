@@ -60,13 +60,6 @@ jobs:
           git commit -m 'update GeoJSON with rainfall data' || echo 'No changes to commit'
           git push --force
 
-      - name: Upload artifact after updating rainfall
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: './web'
-          name: 'github-pages'
-      - name: Deploy after updating rainfall
-        uses: actions/deploy-pages@v4
 
   deploy:
     needs: [getdata, update_rainfall]
