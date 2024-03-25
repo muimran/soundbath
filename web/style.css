@@ -24,4 +24,15 @@ body {
   }
 }
 
+/* Default styling for larger screens */
+#info {
+    font-size: 16px; /* or any size you prefer for larger screens */
+}
+
+/* Media query for screens narrower than 600px (typical mobile breakpoint) */
+@media screen and (max-width: 600px) {
+    #info {
+        font-size: 12px; /* smaller font size for mobile screens */
+    }
+}
 
