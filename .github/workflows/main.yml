@@ -23,29 +23,54 @@ jobs:
       - name: install deps
         run: |
           pip install requests
-      - name: execute python script
+      - name: execute python script to get data
         run: |
           python api.py
         working-directory: scripts
-      - name: commit changes
+      - name: commit changes from getting data
         run: |
           git config user.email "imran271828@gmail.com"
           git config user.name "Muhammad Imran"
           git add .
-          git commit -m 'update'
+          git commit -m 'update data from API'
           git push
-  deploy:
+    
+
+  update_rainfall:
     needs: getdata
+    runs-on: ubuntu-latest
+    steps:
+      - name: wait for 45 seconds
+        run: sleep 45
+      - name: checkout repo
+        uses: actions/checkout@v4
+      - name: setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.12
+      - name: execute python script to update rainfall
+        run: |
+          python update_rainfall.py
+        working-directory: scripts
+      - name: commit changes to GeoJSON
+        run: |
+          git config user.email "imran271828@gmail.com"
+          git config user.name "Muhammad Imran"
+          git add .
+          git commit -m 'update GeoJSON with rainfall data' || echo 'No changes to commit'
+          git push --force
+
+
+  deploy:
+    needs: [getdata, update_rainfall]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Upload artifact
+      - name: Upload final artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
           path: './web'
-      - name: Deploy to GitHub Pages
-        id: deployment
+          name: 'github-pages'
+      - name: Deploy final version to GitHub Pages
         uses: actions/deploy-pages@v4
-        
