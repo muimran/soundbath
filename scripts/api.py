@@ -129,7 +129,7 @@ for station_data in wales_rainfall_data:
         combined_data.append([lat_long_key, rainfall, 'Wales'])
 
 # Update existing CSV with rainfall data
-filename = "coordinates_rainfall_data.csv"
+filename = "../web/data/coordinates_rainfall_data.csv"
 with open(filename, mode='r', newline='', encoding='utf-8') as file:
     reader = csv.DictReader(file)
     existing_data = list(reader)
@@ -151,7 +151,7 @@ with open(filename, mode='w', newline='', encoding='utf-8') as file:
     writer.writerows(existing_data)
 
 # Update the GeoJSON data with rainfall data from the CSV
-csv_file_path = 'coordinates_rainfall_data.csv'
+csv_file_path = '../web/data/coordinates_rainfall_data.csv'
 geojson_file_path = 'myData.geojson'
 
 # Read the updated CSV data
