@@ -35,11 +35,12 @@ function updateAverageRainfall() {
 
     let averageRainfall = (visibleFeatures.length > 0) ? (totalRainfall / visibleFeatures.length).toFixed(2) : 'N/A';
     
-    document.getElementById('info').textContent = 'Average Rainfall: ' + averageRainfall + ' mm, ' +
-                                                   'Total Rainfall: ' + totalRainfall.toFixed(2) + ' mm, ' +
-                                                   'Total Stations: ' + visibleFeatures.length + ', ' +
-                                                   'Stations with Rainfall > 0mm: ' + stationsWithRainfall;
+    document.getElementById('info').innerHTML = 'Average Rainfall: ' + averageRainfall + ' mm<br>' +
+                                                 'Total Rainfall: ' + totalRainfall.toFixed(2) + ' mm<br>' +
+                                                 'Total Stations: ' + visibleFeatures.length + '<br>' +
+                                                 'Stations with Rainfall > 0mm: ' + stationsWithRainfall;
 }
+
 
 
 map.on('load', () => {
