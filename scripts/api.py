@@ -1,9 +1,7 @@
 import requests
 import csv
+import json
 from datetime import datetime
-import os
-print("Current Working Directory: ", os.getcwd())
-
 
 # Function to safely convert to float
 def safe_float_convert(value, default=None):
@@ -11,6 +9,11 @@ def safe_float_convert(value, default=None):
         return float(value)
     except (ValueError, TypeError):
         return default
+
+# Function to check if the coordinates match
+def coords_match(feature, csv_row):
+    lat, lon = map(float, [csv_row['lat'], csv_row['long']])
+    return feature['geometry']['coordinates'] == [lon, lat]
 
 # Function to fetch station data with coordinates for England
 def fetch_station_data_eng():
@@ -44,7 +47,6 @@ def fetch_station_data_sco():
     if sco_response.status_code == 200:
         sco_stations = sco_response.json()
         for station in sco_stations:
-            # Convert latitude and longitude to float
             latitude = safe_float_convert(station.get('station_latitude'))
             longitude = safe_float_convert(station.get('station_longitude'))
             if latitude is not None and longitude is not None:
@@ -53,7 +55,6 @@ def fetch_station_data_sco():
                     'longitude': longitude
                 }
     return sco_station_data
-
 
 # Function to fetch latest hourly rainfall data for Scotland
 def get_rainfall_data_sco(station_id):
@@ -110,7 +111,6 @@ for measurement in eng_rainfall_data:
         combined_data.append([lat_long_key, rainfall, 'England'])
 
 # Process and combine Scotland data
-# Process and combine Scotland data
 for station_id, coordinates in sco_station_coordinates.items():
     sco_rainfall = get_rainfall_data_sco(station_id)
     if sco_rainfall:
@@ -129,7 +129,7 @@ for station_data in wales_rainfall_data:
         combined_data.append([lat_long_key, rainfall, 'Wales'])
 
 # Update existing CSV with rainfall data
-filename = "../web/data/coordinates_rainfall_data.csv"
+filename = "coordinates_rainfall_data.csv"
 with open(filename, mode='r', newline='', encoding='utf-8') as file:
     reader = csv.DictReader(file)
     existing_data = list(reader)
@@ -137,17 +137,12 @@ with open(filename, mode='r', newline='', encoding='utf-8') as file:
 # Create a mapping of latitude and longitude to index in existing data
 lat_long_to_index = {(float(row['lat']), float(row['long'])): index for index, row in enumerate(existing_data)}
 
-# for data_row in combined_data:
-#     lat_long_key = data_row[0]
-#     rainfall = data_row[1]
-#     if lat_long_key in lat_long_to_index and rainfall is not None:
-#         existing_data[lat_long_to_index[lat_long_key]]['rainfall_mm'] = rainfall
-
 for data_row in combined_data:
     lat_long_key = data_row[0]
     rainfall = data_row[1]
     if lat_long_key in lat_long_to_index and rainfall is not None:
         existing_data[lat_long_to_index[lat_long_key]]['rainfall_mm'] = rainfall
+        print(f"Updated CSV: Lat {lat_long_key[0]}, Long {lat_long_key[1]}, Rainfall {rainfall}")
 
 # Write the updated data back to the CSV
 with open(filename, mode='w', newline='', encoding='utf-8') as file:
@@ -155,48 +150,32 @@ with open(filename, mode='w', newline='', encoding='utf-8') as file:
     writer.writeheader()
     writer.writerows(existing_data)
 
-# Calculate and update the county_avg
-county_rainfall = {}
-for row in existing_data:
-    county = row['county']
-    rainfall = safe_float_convert(row['rainfall_mm'], default=0)
-    if county not in county_rainfall:
-        county_rainfall[county] = {'total_rainfall': 0, 'count': 0}
-    county_rainfall[county]['total_rainfall'] += rainfall
-    county_rainfall[county]['count'] += 1
+# Update the GeoJSON data with rainfall data from the CSV
+csv_file_path = 'coordinates_rainfall_data.csv'
+geojson_file_path = 'myData.geojson'
 
-for county, data in county_rainfall.items():
-    data['average_rainfall'] = "{:.2f}".format(data['total_rainfall'] / data['count']) if data['count'] > 0 else "0.00"
+# Read the updated CSV data
+with open(csv_file_path, newline='') as csvfile:
+    reader = csv.DictReader(csvfile)
+    csv_data = [row for row in reader]
 
-for row in existing_data:
-    county = row['county']
-    row['county_avg'] = county_rainfall[county]['average_rainfall']
+# Load the GeoJSON data
+with open(geojson_file_path) as geojson_file:
+    geojson_data = json.load(geojson_file)
 
-# Calculate and update the country_avg
-country_rainfall = {}
-for data_row in combined_data:
-    country = data_row[2]  # Assuming country is the third element in the data row
-    rainfall = data_row[1]
-    if country not in country_rainfall:
-        country_rainfall[country] = {'total_rainfall': 0, 'count': 0}
-    country_rainfall[country]['total_rainfall'] += rainfall if rainfall is not None else 0
-    country_rainfall[country]['count'] += 1 if rainfall is not None else 0
+update_count = 0
+for csv_row in csv_data:
+    for index, feature in enumerate(geojson_data['features']):
+        if coords_match(feature, csv_row):
+            feature['properties']['rainfall'] = csv_row['rainfall_mm']
+            update_count += 1
+            print(f"Updated GeoJSON Feature at Index {index} with Rainfall {csv_row['rainfall_mm']}")
+            break  # Stop looking once we've found the matching feature
 
-for country, data in country_rainfall.items():
-    data['average_rainfall'] = "{:.2f}".format(data['total_rainfall'] / data['count']) if data['count'] > 0 else "0.00"
+# Save the updated GeoJSON data
+with open(geojson_file_path, 'w') as geojson_file:
+    json.dump(geojson_data, geojson_file, indent=4)
 
-for row in existing_data:
-    country = row['country']  # Assuming there is a 'country' column in your CSV
-    row['country_avg'] = country_rainfall[country]['average_rainfall'] if country in country_rainfall else "0.00"
-
-
-# Write the final updated data back to the CSV
-with open(filename, mode='w', newline='', encoding='utf-8') as file:
-    writer = csv.DictWriter(file, fieldnames=reader.fieldnames)
-    writer.writeheader()
-    for row in existing_data:
-        writer.writerow(row)
-        print("Wrote to CSV:", row)
-
+# Final print statement
 current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-print(f"Data has been updated in {filename} and current time is {current_time}")
+print(f"Data has been updated in both {csv_file_path} and {geojson_file_path}. Current time is {current_time}")
