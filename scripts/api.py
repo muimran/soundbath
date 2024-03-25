@@ -194,7 +194,9 @@ for row in existing_data:
 with open(filename, mode='w', newline='', encoding='utf-8') as file:
     writer = csv.DictWriter(file, fieldnames=reader.fieldnames)
     writer.writeheader()
-    writer.writerows(existing_data)
+    for row in existing_data:
+        writer.writerow(row)
+        print("Wrote to CSV:", row)
 
 current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 print(f"Data has been updated in {filename} and current time is {current_time}")
