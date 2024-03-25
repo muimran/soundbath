@@ -1,11 +1,8 @@
-// Mapbox access token
-mapboxgl.accessToken = 'YOUR_MAPBOX_ACCESS_TOKEN';
-
-// Initialize the Mapbox map
+mapboxgl.accessToken = 'pk.eyJ1IjoiZG93ZWxsYWYiLCJhIjoiY2x0cjJjc2VqMGVtZzJrbnYwZjcxczdkcCJ9.ljRbHHEIuM4J40yUamM8zg';
 const map = new mapboxgl.Map({
     container: 'map', // container ID
-    style: 'mapbox://styles/YOUR_MAPBOX_STYLE', // style URL
-    center: [0, 0], // starting position [lng, lat]
+    style: 'mapbox://styles/dowellaf/cltr2h0h0007y01p7akad96el', // style URL
+    center: [0, 0], // starting position
     zoom: 1 // starting zoom
 });
 
