@@ -152,7 +152,7 @@ with open(filename, mode='w', newline='', encoding='utf-8') as file:
 
 # Update the GeoJSON data with rainfall data from the CSV
 csv_file_path = '../web/data/coordinates_rainfall_data.csv'
-geojson_file_path = 'myData.geojson'
+geojson_file_path = '../web/data/myData.geojson'
 
 # Read the updated CSV data
 with open(csv_file_path, newline='') as csvfile:
