@@ -20,14 +20,27 @@ function updateAverageRainfall() {
         return bounds.contains([lng, lat]);
     });
 
-    let totalRainfall = visibleFeatures.reduce((sum, feature) => {
+    let totalRainfall = 0;
+    let stationsWithRainfall = 0;
+
+    visibleFeatures.forEach(feature => {
         let rainfall = parseFloat(feature.properties.rainfall);
-        return isNaN(rainfall) ? sum : sum + rainfall;
-    }, 0);
+        if (!isNaN(rainfall)) {
+            totalRainfall += rainfall;
+            if (rainfall > 0) {
+                stationsWithRainfall++;
+            }
+        }
+    });
 
     let averageRainfall = (visibleFeatures.length > 0) ? (totalRainfall / visibleFeatures.length).toFixed(2) : 'N/A';
-    document.getElementById('info').textContent = 'Average Rainfall: ' + averageRainfall + ' mm';
+    
+    document.getElementById('info').textContent = 'Average Rainfall: ' + averageRainfall + ' mm, ' +
+                                                   'Total Rainfall: ' + totalRainfall.toFixed(2) + ' mm, ' +
+                                                   'Total Stations: ' + visibleFeatures.length + ', ' +
+                                                   'Stations with Rainfall > 0mm: ' + stationsWithRainfall;
 }
+
 
 map.on('load', () => {
     // Fetch GeoJSON data
