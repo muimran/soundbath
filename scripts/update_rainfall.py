@@ -1,6 +1,5 @@
 import csv
 import json
-import os
 
 # Define the paths to the files
 csv_file_path = '../web/data/coordinates_rainfall_data.csv'
@@ -17,15 +16,22 @@ with open(geojson_file_path) as geojson_file:
 
 # Function to check if the coordinates match
 def coords_match(feature, csv_row):
-    lat, lon = map(float, csv_row['lat']), map(float, csv_row['long'])
+    lat, lon = map(float, [csv_row['lat'], csv_row['long']])
     return feature['geometry']['coordinates'] == [lon, lat]
 
 # Update the GeoJSON data with rainfall data from the CSV
+# Update the GeoJSON data with rainfall data from the CSV
+update_count = 0
 for csv_row in csv_data:
-    for feature in geojson_data['features']:
+    for index, feature in enumerate(geojson_data['features']):
         if coords_match(feature, csv_row):
             feature['properties']['rainfall'] = csv_row['rainfall_mm']
+            update_count += 1
+            print(f"Updated feature at index {index} with rainfall {csv_row['rainfall_mm']}")
             break  # Stop looking once we've found the matching feature
+
+
+print(f"Total updates made: {update_count}")
 
 # Save the updated GeoJSON data
 with open(geojson_file_path, 'w') as geojson_file:
