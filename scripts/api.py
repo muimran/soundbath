@@ -40,29 +40,44 @@ def get_rainfall_data_eng():
     return []
 
 # Function to fetch station data with coordinates for Scotland
-def fetch_station_data_sco():
-    sco_url = "https://www2.sepa.org.uk/rainfall/api/Stations"
-    sco_response = requests.get(sco_url)
-    sco_station_data = {}
-    if sco_response.status_code == 200:
-        sco_stations = sco_response.json()
-        for station in sco_stations:
-            latitude = safe_float_convert(station.get('station_latitude'))
-            longitude = safe_float_convert(station.get('station_longitude'))
-            if latitude is not None and longitude is not None:
-                sco_station_data[station['station_no']] = {
-                    'latitude': latitude,
-                    'longitude': longitude
-                }
-    return sco_station_data
+def get_scotland_rainfall_data(base_url):
+    # Fetch the list of stations
+    stations_url = f"{base_url}/api/Stations"
+    stations_response = requests.get(stations_url)
+    scotland_rainfall_data = []
+    if stations_response.status_code == 200:
+        stations = json.loads(stations_response.content)
 
-# Function to fetch latest hourly rainfall data for Scotland
-def get_rainfall_data_sco(station_id):
-    sco_url = f"https://www2.sepa.org.uk/rainfall/api/Hourly/{station_id}?all=true"
-    sco_response = requests.get(sco_url)
-    if sco_response.status_code == 200 and sco_response.json():
-        return sco_response.json()[-1]
-    return None
+        # Fetch latest data for each station
+        for station in stations:
+            station_id = station.get("station_no")
+            station_data_url = f"{base_url}/api/Stations/{station_id}"
+            try:
+                response = requests.get(station_data_url)
+                if response.status_code == 200 and response.content:
+                    data = json.loads(response.content)
+                    # Convert data types
+                    latitude = float(data.get("station_latitude"))
+                    longitude = float(data.get("station_longitude"))
+                    rainfall = float(data.get("itemValue")) / 4  # Dividing rainfall value by 4
+                    station_id = int(station_id)  # Convert station_id to integer
+
+                    if latitude is not None and longitude is not None and rainfall is not None:
+                        scotland_rainfall_data.append({
+                            'station_id': station_id,
+                            'latitude': latitude,
+                            'longitude': longitude,
+                            'rainfall': rainfall
+                        })
+                else:
+                    print(f"Error fetching data for station {station_id}: HTTP {response.status_code}")
+            except json.JSONDecodeError:
+                print(f"Invalid JSON response for station {station_id}")
+            except Exception as e:
+                print(f"An error occurred: {e}")
+
+    return scotland_rainfall_data
+
 
 # Function to fetch station data with rainfall measurements for Wales
 def get_wales_rainfall_data(api_key):
@@ -94,8 +109,8 @@ def get_wales_rainfall_data(api_key):
 # Fetching and processing data for England, Scotland, and Wales
 eng_station_coordinates = fetch_station_data_eng()
 eng_rainfall_data = get_rainfall_data_eng()
-sco_station_coordinates = fetch_station_data_sco()
-sco_rainfall_data = {station_id: get_rainfall_data_sco(station_id) for station_id in sco_station_coordinates}
+base_url = "https://www2.sepa.org.uk/rainfall"
+scotland_rainfall_data = get_scotland_rainfall_data(base_url)
 wales_rainfall_data = get_wales_rainfall_data('413a14f470f64b70a010cfa3b4ed6a79')  # Replace with actual API key
 
 # Combine the data using latitude and longitude as the key
@@ -111,13 +126,13 @@ for measurement in eng_rainfall_data:
         combined_data.append([lat_long_key, rainfall, 'England'])
 
 # Process and combine Scotland data
-for station_id, coordinates in sco_station_coordinates.items():
-    sco_rainfall = get_rainfall_data_sco(station_id)
-    if sco_rainfall:
-        rainfall = safe_float_convert(sco_rainfall.get('Value'))
-        lat_long_key = (coordinates['latitude'], coordinates['longitude'])
-        if coordinates['latitude'] is not None and coordinates['longitude'] is not None:
-            combined_data.append([lat_long_key, rainfall, 'Scotland'])
+for station_data in scotland_rainfall_data:
+    rainfall = safe_float_convert(station_data['rainfall'])
+    latitude = station_data['latitude']
+    longitude = station_data['longitude']
+    lat_long_key = (latitude, longitude)
+    if latitude is not None and longitude is not None:
+        combined_data.append([lat_long_key, rainfall, 'Scotland'])
 
 # Process and combine Wales data
 for station_data in wales_rainfall_data:
