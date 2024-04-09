@@ -4587,7 +4587,7 @@
                 ]
             },
             "properties": {
-                "rainfall": "0.0"
+                "rainfall": "0.2"
             }
         },
         {
@@ -5523,7 +5523,7 @@
                 ]
             },
             "properties": {
-                "rainfall": "0.2"
+                "rainfall": "0.0"
             }
         },
         {
@@ -14298,7 +14298,7 @@
                 ]
             },
             "properties": {
-                "rainfall": "2.25"
+                "rainfall": "2.3"
             }
         },
         {
@@ -16118,7 +16118,7 @@
                 ]
             },
             "properties": {
-                "rainfall": "2.65"
+                "rainfall": "2.85"
             }
         },
         {
