@@ -1324,7 +1324,7 @@
                 ]
             },
             "properties": {
-                "rainfall": "0.2"
+                "rainfall": "0.0"
             }
         },
         {
@@ -5523,7 +5523,7 @@
                 ]
             },
             "properties": {
-                "rainfall": "0.0"
+                "rainfall": "0.2"
             }
         },
         {
@@ -9787,7 +9787,7 @@
                 ]
             },
             "properties": {
-                "rainfall": "0.1"
+                "rainfall": "0.0"
             }
         },
         {
@@ -10645,7 +10645,7 @@
                 ]
             },
             "properties": {
-                "rainfall": "0.2"
+                "rainfall": "0.1"
             }
         },
         {
@@ -13362,7 +13362,7 @@
                 ]
             },
             "properties": {
-                "rainfall": "5.3"
+                "rainfall": "5.35"
             }
         },
         {
@@ -14090,7 +14090,7 @@
                 ]
             },
             "properties": {
-                "rainfall": "2.7"
+                "rainfall": "2.8"
             }
         },
         {
@@ -14194,7 +14194,7 @@
                 ]
             },
             "properties": {
-                "rainfall": "5.75"
+                "rainfall": "5.85"
             }
         },
         {
@@ -14792,7 +14792,7 @@
                 ]
             },
             "properties": {
-                "rainfall": "2.8"
+                "rainfall": "2.75"
             }
         },
         {
@@ -15130,7 +15130,7 @@
                 ]
             },
             "properties": {
-                "rainfall": "1.0"
+                "rainfall": "1.05"
             }
         },
         {
@@ -16586,7 +16586,7 @@
                 ]
             },
             "properties": {
-                "rainfall": "4.125"
+                "rainfall": "4.2"
             }
         },
         {
