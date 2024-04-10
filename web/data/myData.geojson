@@ -1259,7 +1259,7 @@
                 ]
             },
             "properties": {
-                "rainfall": "0.0"
+                "rainfall": "0.01"
             }
         },
         {
@@ -1714,7 +1714,7 @@
                 ]
             },
             "properties": {
-                "rainfall": "0.0"
+                "rainfall": "0.2"
             }
         },
         {
@@ -2234,7 +2234,7 @@
                 ]
             },
             "properties": {
-                "rainfall": "0.0"
+                "rainfall": "0.007"
             }
         },
         {
@@ -2286,7 +2286,7 @@
                 ]
             },
             "properties": {
-                "rainfall": "0.0"
+                "rainfall": "0.2"
             }
         },
         {
@@ -15195,7 +15195,7 @@
                 ]
             },
             "properties": {
-                "rainfall": "2.7"
+                "rainfall": "2.75"
             }
         },
         {
@@ -15611,7 +15611,7 @@
                 ]
             },
             "properties": {
-                "rainfall": "2.7"
+                "rainfall": "2.9"
             }
         },
         {
@@ -15910,7 +15910,7 @@
                 ]
             },
             "properties": {
-                "rainfall": "4.3"
+                "rainfall": "4.2"
             }
         },
         {
@@ -16105,7 +16105,7 @@
                 ]
             },
             "properties": {
-                "rainfall": "5.15"
+                "rainfall": "5.1"
             }
         },
         {
@@ -16326,7 +16326,7 @@
                 ]
             },
             "properties": {
-                "rainfall": "5.45"
+                "rainfall": "5.25"
             }
         },
         {
@@ -16443,7 +16443,7 @@
                 ]
             },
             "properties": {
-                "rainfall": "4.3"
+                "rainfall": "4.25"
             }
         },
         {
@@ -16482,7 +16482,7 @@
                 ]
             },
             "properties": {
-                "rainfall": "4.85"
+                "rainfall": "4.75"
             }
         },
         {
