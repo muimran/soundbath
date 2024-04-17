@@ -51,26 +51,36 @@ def get_scotland_rainfall_data(base_url):
         # Fetch latest data for each station
         for station in stations:
             station_id = station.get("station_no")
-            station_data_url = f"{base_url}/api/Stations/{station_id}"
-            try:
-                response = requests.get(station_data_url)
-                if response.status_code == 200 and response.content:
-                    data = json.loads(response.content)
-                    # Convert data types
-                    latitude = float(data.get("station_latitude"))
-                    longitude = float(data.get("station_longitude"))
-                    rainfall = float(data.get("itemValue")) / 4  # Dividing rainfall value by 4
-                    station_id = int(station_id)  # Convert station_id to integer
+            station_details_url = f"{base_url}/api/Stations/{station_id}"
+            hourly_data_url = f"{base_url}/api/Hourly/{station_id}?all=true"
 
-                    if latitude is not None and longitude is not None and rainfall is not None:
-                        scotland_rainfall_data.append({
-                            'station_id': station_id,
-                            'latitude': latitude,
-                            'longitude': longitude,
-                            'rainfall': rainfall
-                        })
+            try:
+                # Get station details including latitude and longitude
+                details_response = requests.get(station_details_url)
+                if details_response.status_code == 200 and details_response.content:
+                    details_data = json.loads(details_response.content)
+                    latitude = details_data.get("station_latitude")
+                    longitude = details_data.get("station_longitude")
+
+                    # Get latest rainfall data
+                    hourly_response = requests.get(hourly_data_url)
+                    if hourly_response.status_code == 200 and hourly_response.content:
+                        hourly_data = json.loads(hourly_response.content)
+                        if hourly_data:
+                            # Get the last record for the latest timestamp
+                            last_record = hourly_data[-1]
+                            timestamp = last_record.get("Timestamp")
+                            rainfall = last_record.get("Value")
+                            if latitude is not None and longitude is not None and rainfall is not None:
+                                scotland_rainfall_data.append({
+                                    'station_id': station_id,
+                                    'latitude': latitude,
+                                    'longitude': longitude,
+                                    'timestamp': timestamp,
+                                    'rainfall': rainfall
+                                })
                 else:
-                    print(f"Error fetching data for station {station_id}: HTTP {response.status_code}")
+                    print(f"Error fetching station details for {station_id}: HTTP {details_response.status_code}")
             except json.JSONDecodeError:
                 print(f"Invalid JSON response for station {station_id}")
             except Exception as e:
