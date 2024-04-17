@@ -18,39 +18,40 @@ function updateAverageRainfall() {
 
     let bounds = map.getBounds(); // Retrieve the current geographic boundaries of the visible map area.
     let visibleFeatures = geojsonData.features.filter(feature => {
-        let [lng, lat] = feature.geometry.coordinates; // Destructure coordinates of each feature.
-        return bounds.contains([lng, lat]); // Filter to include only features within the current map bounds.
+        let [lng, lat] = feature.geometry.coordinates;
+        return bounds.contains([lng, lat]);
     });
 
     let totalRainfall = 0;
     let stationsWithRainfall = 0;
-    let rainfallAndCountryCodes = ''; // Initialize the string to collect the data.
+    let rainfallAndCountryCodes = '';
 
     // Calculate total rainfall and count stations with rainfall.
     visibleFeatures.forEach(feature => {
-        let rainfall = parseFloat(feature.properties.rainfall); // Parse rainfall values to floating point.
-        if (!isNaN(rainfall)) { // Check if the rainfall value is a valid number.
-            totalRainfall += rainfall; // Accumulate total rainfall.
-            if (rainfall > 0) { // Check if there is rainfall.
-                stationsWithRainfall++; // Increment count of stations with rainfall.
-                let country_code = feature.properties.country_code; // Access country code directly.
-                rainfallAndCountryCodes += `${rainfall} ${country_code} `; // Append formatted data.
-            }
+        let rainfall = parseFloat(feature.properties.rainfall);
+        let country_code = feature.properties.country_code;
+
+        // Ensure rainfall and country code are defined and rainfall is greater than 0.
+        if (!isNaN(rainfall) && rainfall > 0 && country_code !== undefined) {
+            stationsWithRainfall++;
+            totalRainfall += rainfall;
+            rainfallAndCountryCodes += `${rainfall} ${country_code} `;
         }
     });
 
-    // Trim the trailing space for a clean finish.
-    rainfallAndCountryCodes = rainfallAndCountryCodes.trim();
+    rainfallAndCountryCodes = rainfallAndCountryCodes.trim(); // Trim the final string.
 
-    let averageRainfall = (visibleFeatures.length > 0) ? (totalRainfall / visibleFeatures.length).toFixed(2) : 'N/A'; // Compute average rainfall if there are visible features, otherwise 'N/A'.
+    let averageRainfall = (visibleFeatures.length > 0) ? (totalRainfall / visibleFeatures.length).toFixed(2) : 'N/A';
 
-    // Update the HTML content of the element with ID 'info' with rainfall data.
+    // Update the HTML content.
     document.getElementById('info').innerHTML = 'Average Rainfall: ' + averageRainfall + ' mm<br>' +
-                                                 'Total Rainfall: ' + totalRainfall.toFixed(2) + ' mm<br>' +
-                                                 'Total Stations: ' + visibleFeatures.length + '<br>' +
-                                                 'Stations with Rainfall > 0mm: ' + stationsWithRainfall + '<br>' +
-                                                 'Visible Rainfall & Country Codes: ' + rainfallAndCountryCodes;
+                                                'Total Rainfall: ' + totalRainfall.toFixed(2) + ' mm<br>' +
+                                                'Total Stations: ' + visibleFeatures.length + '<br>' +
+                                                'Stations with Rainfall > 0mm: ' + stationsWithRainfall + '<br>' +
+                                                'Visible Rainfall & Country Codes: ' + rainfallAndCountryCodes;
 }
+
+
 
 // Event handler for the 'load' event of the map.
 map.on('load', () => {
