@@ -178,6 +178,7 @@ with open(csv_file_path, newline='') as csvfile:
 with open(geojson_file_path) as geojson_file:
     geojson_data = json.load(geojson_file)
 
+update_count = 0
 for csv_row in csv_data:
     for index, feature in enumerate(geojson_data['features']):
         if coords_match(feature, csv_row):
