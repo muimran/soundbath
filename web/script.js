@@ -32,7 +32,7 @@ function updateAverageRainfall() {
         let country_code = feature.properties.country_code;
 
         // Ensure rainfall and country code are defined and rainfall is greater than 0.
-        if (!isNaN(rainfall) && rainfall > 0 && country_code !== undefined) {
+        if (!isNaN(rainfall) && rainfall >= 0 && country_code !== undefined) {
             stationsWithRainfall++;
             totalRainfall += rainfall;
             rainfallAndCountryCodes += `${rainfall} ${country_code} `;
