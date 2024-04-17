@@ -178,14 +178,18 @@ with open(csv_file_path, newline='') as csvfile:
 with open(geojson_file_path) as geojson_file:
     geojson_data = json.load(geojson_file)
 
-update_count = 0
 for csv_row in csv_data:
     for index, feature in enumerate(geojson_data['features']):
         if coords_match(feature, csv_row):
-            feature['properties']['rainfall'] = csv_row['rainfall_mm']
+            # Update both rainfall and country code properties in one line
+            feature['properties'].update({
+                'rainfall': csv_row['rainfall_mm'],
+                'country_code': int(csv_row['country_code'])  # Convert to integer if necessary
+            })
             update_count += 1
-            print(f"Updated GeoJSON Feature at Index {index} with Rainfall {csv_row['rainfall_mm']}")
+            print(f"Updated GeoJSON Feature at Index {index} with Rainfall {csv_row['rainfall_mm']} and Country Code {csv_row['country_code']}")
             break  # Stop looking once we've found the matching feature
+
 
 # Save the updated GeoJSON data
 with open(geojson_file_path, 'w') as geojson_file:
