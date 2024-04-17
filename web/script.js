@@ -12,7 +12,7 @@ const map = new mapboxgl.Map({
 // Declare a variable to store GeoJSON data, which will be used to store and manipulate geographic data format.
 let geojsonData;
 
-// Define a function to update average rainfall information based on visible map area.
+// Define a function to update average rainfall information and display rainfall and country codes for visible features.
 function updateAverageRainfall() {
     if (!geojsonData) return; // Exit if geojsonData is not loaded.
 
@@ -24,6 +24,7 @@ function updateAverageRainfall() {
 
     let totalRainfall = 0;
     let stationsWithRainfall = 0;
+    let rainfallAndCountryCodes = ''; // Initialize the string to collect the data.
 
     // Calculate total rainfall and count stations with rainfall.
     visibleFeatures.forEach(feature => {
@@ -32,17 +33,23 @@ function updateAverageRainfall() {
             totalRainfall += rainfall; // Accumulate total rainfall.
             if (rainfall > 0) { // Check if there is rainfall.
                 stationsWithRainfall++; // Increment count of stations with rainfall.
+                let country_code = feature.properties.country_code; // Access country code directly.
+                rainfallAndCountryCodes += `${rainfall} ${country_code} `; // Append formatted data.
             }
         }
     });
 
+    // Trim the trailing space for a clean finish.
+    rainfallAndCountryCodes = rainfallAndCountryCodes.trim();
+
     let averageRainfall = (visibleFeatures.length > 0) ? (totalRainfall / visibleFeatures.length).toFixed(2) : 'N/A'; // Compute average rainfall if there are visible features, otherwise 'N/A'.
-    
+
     // Update the HTML content of the element with ID 'info' with rainfall data.
     document.getElementById('info').innerHTML = 'Average Rainfall: ' + averageRainfall + ' mm<br>' +
                                                  'Total Rainfall: ' + totalRainfall.toFixed(2) + ' mm<br>' +
                                                  'Total Stations: ' + visibleFeatures.length + '<br>' +
-                                                 'Stations with Rainfall > 0mm: ' + stationsWithRainfall;
+                                                 'Stations with Rainfall > 0mm: ' + stationsWithRainfall + '<br>' +
+                                                 'Visible Rainfall & Country Codes: ' + rainfallAndCountryCodes;
 }
 
 // Event handler for the 'load' event of the map.
@@ -74,7 +81,7 @@ map.on('load', () => {
                         0,
                         1,
                         1
-                    ], // Defines how the weight of each data point scales with its rainfall value.
+                    ],
                     'heatmap-intensity': [
                         'interpolate',
                         ['linear'],
@@ -83,7 +90,7 @@ map.on('load', () => {
                         1,
                         9,
                         3
-                    ], // Adjusts the intensity of the heatmap based on the map's zoom level.
+                    ],
                     'heatmap-color': [
                         'interpolate',
                         ['linear'],
@@ -100,7 +107,7 @@ map.on('load', () => {
                         'rgba(92, 56, 214, 0.8)',
                         1,
                         'rgba(48, 0, 208, 0.8)'
-                    ], // Sets the color gradient of the heatmap, varying with the data density.
+                    ],
                     'heatmap-radius': [
                         'interpolate',
                         ['linear'],
@@ -111,7 +118,7 @@ map.on('load', () => {
                         30,
                         14,
                         80
-                    ], // Changes the radius of heatmap points based on zoom level.
+                    ],
                     'heatmap-opacity': [
                         'interpolate',
                         ['linear'],
@@ -122,9 +129,9 @@ map.on('load', () => {
                         1,
                         14,
                         0
-                    ] // Controls the opacity of the heatmap, reducing it as zoom level increases.
+                    ]
                 }
-            }, 'waterway-label');
+            });
 
             // Define a circle layer to represent individual points of rainfall data visually.
             map.addLayer({
@@ -141,7 +148,7 @@ map.on('load', () => {
                       ['interpolate', ['linear'], ['to-number', ['get', 'rainfall'], 0], 0, 1, 10, 10],
                       16,
                       ['interpolate', ['linear'], ['to-number', ['get', 'rainfall'], 0], 0, 5, 10, 50]
-                  ], // Adjusts circle size based on zoom level and rainfall amount.
+                  ],
                   'circle-color': [
                       'interpolate',
                       ['linear'],
@@ -152,9 +159,9 @@ map.on('load', () => {
                       'rgb(103,169,207)',
                       3,
                       'rgb(178,24,43)'
-                  ], // Colors circles based on rainfall value, with a gradient from blue to red.
-                  'circle-stroke-color': 'white', // Sets the stroke color of circles to white.
-                  'circle-stroke-width': 1, // Sets the stroke width of circles.
+                  ],
+                  'circle-stroke-color': 'white',
+                  'circle-stroke-width': 1,
                   'circle-opacity': [
                       'interpolate',
                       ['linear'],
@@ -163,9 +170,9 @@ map.on('load', () => {
                       1,
                       22,
                       1
-                  ] // Controls the opacity of circles, keeping them fully opaque across zoom levels.
+                  ]
               }
-          }, 'waterway-label');
+          });
 
             // Initialize and update the average rainfall calculation.
             updateAverageRainfall();
