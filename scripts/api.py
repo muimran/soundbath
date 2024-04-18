@@ -39,6 +39,7 @@ def get_rainfall_data_eng():
         return eng_data['items']
     return []
 
+
 # Function to fetch station data with coordinates for Scotland
 def get_scotland_rainfall_data(base_url):
     # Fetch the list of stations
@@ -59,10 +60,10 @@ def get_scotland_rainfall_data(base_url):
                 details_response = requests.get(station_details_url)
                 if details_response.status_code == 200 and details_response.content:
                     details_data = json.loads(details_response.content)
-                    latitude = details_data.get("station_latitude")
-                    longitude = details_data.get("station_longitude")
+                    latitude = float(details_data.get("station_latitude", "0.0"))  # Default to 0.0 if not found
+                    longitude = float(details_data.get("station_longitude", "0.0"))
 
-                    # Get latest rainfall data
+                     # Get latest rainfall data
                     hourly_response = requests.get(hourly_data_url)
                     if hourly_response.status_code == 200 and hourly_response.content:
                         hourly_data = json.loads(hourly_response.content)
@@ -70,14 +71,16 @@ def get_scotland_rainfall_data(base_url):
                             # Get the last record for the latest timestamp
                             last_record = hourly_data[-1]
                             timestamp = last_record.get("Timestamp")
-                            rainfall = last_record.get("Value")
+                            rainfall = float(last_record.get("Value", "0.0"))  # Convert to float, default to 0.0
+                            adjusted_rainfall = rainfall / 4  # Divide the rainfall value by 4
                             if latitude is not None and longitude is not None and rainfall is not None:
                                 scotland_rainfall_data.append({
                                     'station_id': station_id,
                                     'latitude': latitude,
                                     'longitude': longitude,
                                     'timestamp': timestamp,
-                                    'rainfall': rainfall
+                                    'rainfall': adjusted_rainfall  # Use the adjusted rainfall
+
                                 })
                 else:
                     print(f"Error fetching station details for {station_id}: HTTP {details_response.status_code}")
