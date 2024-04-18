@@ -167,7 +167,7 @@ for data_row in combined_data:
     rainfall = data_row[1]
     if lat_long_key in lat_long_to_index and rainfall is not None:
         existing_data[lat_long_to_index[lat_long_key]]['rainfall_mm'] = rainfall
-        print(f"Updated CSV: Lat {lat_long_key[0]}, Long {lat_long_key[1]}, Rainfall {rainfall}, and Country Code {csv_row['country_code']}")
+        print(f"Updated CSV: Lat {lat_long_key[0]}, Long {lat_long_key[1]}, Rainfall {rainfall}")
 
 # Write the updated data back to the CSV
 with open(filename, mode='w', newline='', encoding='utf-8') as file:
