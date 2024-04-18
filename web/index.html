@@ -8,7 +8,23 @@
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.2.0/mapbox-gl.js"></script>
     <style>
         body { margin: 0; padding: 0; }
-     
+        #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+        #info { 
+            position: absolute; 
+            top: 10px; 
+            left: 100px; 
+            padding: 5px; 
+            background: black;
+            font-family: Helvetica, sans-serif; /* Ensured font is set once */
+            color: black; /* Made color simpler */
+            width: 90%; /* Control the width of the info box */
+            margin: 20px; /* Adds margin around the box */
+            border: 1px solid #ccc; /* Adds a border */
+            background-color: #f9f9f9; /* Light background for the box */
+            font-size: 0.8em; /* Smaller font size for the data */
+            overflow-y: auto; /* Allows scrolling */
+            height: 200px; /* Fixed height, but can scroll */
+        }
     </style>
 </head>
 <body>
