@@ -321,7 +321,7 @@ E24913,0.44,51.815014,0.765948,England,Essex,0.07,0,1
 E11080,0.0,50.828064,-0.805132,England,West Sussex,0.07,0.04,1
 592860,0.0,54.56648,-3.063261,England,Cumberland,0.07,0.07,1
 586056,0.0,54.262864,-2.811323,England,Westmorland and Furness,0.07,0.16,1
-3688,0.0,52.6315,-1.077247,England,City of Leicester,0.07,0,1
+3688,0.2,52.6315,-1.077247,England,City of Leicester,0.07,0,1
 53109,0.0,51.360132,-2.138539,England,Wiltshire,0.07,0.04,1
 E21234,0.0,52.633846,1.556421,England,Norfolk,0.07,0,1
 E24506,0.0,52.898685,0.4791,England,Norfolk,0.07,0,1
@@ -638,7 +638,7 @@ E10360,0.0,51.037622,-0.899591,England,Hampshire,0.07,0.07,1
 E14880,,50.671665,-1.399223,England,Isle of Wight,0.07,0.01,1
 43205,0.1,50.755028,-1.936857,England,"Bournemouth, Christchurch and Poole",0.07,0.4,1
 561613,0.0,53.663285,-2.180798,England,Lancashire,0.07,0.08,1
-243131TP,0.1,51.897439,0.182296,England,Essex,0.07,0,1
+243131TP,0.0,51.897439,0.182296,England,Essex,0.07,0,1
 576578,0.0,53.811772,-2.647675,England,Lancashire,0.07,0.08,1
 E2316,0.0,52.810264,-0.528974,England,Lincolnshire,0.07,0,1
 E5729,0.1,52.949162,1.122162,England,Norfolk,0.07,0,1
