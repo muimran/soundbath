@@ -161,7 +161,7 @@ map.on('load', () => {
                       3,
                       'rgb(178,24,43)'
                   ],
-                  'circle-stroke-color': 'white',
+                
                   'circle-stroke-width': 1,
                   'circle-opacity': [
                       'interpolate',
