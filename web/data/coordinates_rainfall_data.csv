@@ -540,7 +540,7 @@ E4080,0.0,51.258867,1.033447,England,Kent,0.07,0.01,1
 E12160,0.0,50.942234,-1.227791,England,Hampshire,0.07,0.07,1
 53106,0.0,51.474338,-2.127367,England,Wiltshire,0.07,0.04,1
 52225,0.0,51.260327,-2.806074,England,Somerset,0.07,0.05,1
-265038TP,0.1,51.543602,-1.343114,England,West Berkshire,0.07,0.06,1
+265038TP,0.0,51.543602,-1.343114,England,West Berkshire,0.07,0.06,1
 598147,,54.504409,-2.241634,England,Westmorland and Furness,0.07,0.16,1
 417417TP,0.0,51.466604,-0.571144,England,Royal Borough of Windsor and Maidenhead,0.07,0,1
 45231,0.0,50.76725,-2.963477,England,Devon,0.07,0.14,1
@@ -647,7 +647,7 @@ E5729,0.0,52.949162,1.122162,England,Norfolk,0.07,0,1
 3629,0.0,52.78808,-1.097664,England,Leicestershire,0.07,0,1
 E6760,0.0,51.028745,0.275298,England,East Sussex,0.07,0,1
 E44081,0.0,52.060314,0.493671,England,Suffolk,0.07,0,1
-E901,0.0,51.15203,0.176969,England,Kent,0.07,0.01,1
+E901,0.1,51.15203,0.176969,England,Kent,0.07,0.01,1
 54507,0.0,54.382707,-1.394093,England,North Yorkshire,0.07,0.06,1
 21228,0.0,54.747962,-2.235316,England,County Durham,0.07,0.05,1
 22994,0.0,54.624106,-1.870637,England,County Durham,0.07,0.05,1
