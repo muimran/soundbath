@@ -542,7 +542,7 @@ E12160,0.0,50.942234,-1.227791,England,Hampshire,0.07,0.07,1
 52225,0.0,51.260327,-2.806074,England,Somerset,0.07,0.05,1
 265038TP,0.0,51.543602,-1.343114,England,West Berkshire,0.07,0.06,1
 598147,,54.504409,-2.241634,England,Westmorland and Furness,0.07,0.16,1
-417417TP,0.1,51.466604,-0.571144,England,Royal Borough of Windsor and Maidenhead,0.07,0,1
+417417TP,0.0,51.466604,-0.571144,England,Royal Borough of Windsor and Maidenhead,0.07,0,1
 45231,0.0,50.76725,-2.963477,England,Devon,0.07,0.14,1
 247540TP,0.0,51.479469,-0.451216,England,London Borough of Hillingdon,0.07,0,1
 74385,0.0,53.947438,-2.020525,England,North Yorkshire,0.07,0.06,1
@@ -617,7 +617,7 @@ E2476,0.0,52.252632,-1.146653,England,West Northamptonshire,0.07,0.02,1
 600986,0.0,54.497284,-2.690895,England,Westmorland and Furness,0.07,0.16,1
 5588,0.0,55.174997,-1.521877,England,Northumberland,0.07,0,1
 560631,0.0,53.718989,-2.194675,England,Lancashire,0.07,0.08,1
-E8510,0.0,50.90639,-0.072052,England,East Sussex,0.07,0,1
+E8510,0.2,50.90639,-0.072052,England,East Sussex,0.07,0,1
 E13560,0.0,50.993139,-1.491976,England,Hampshire,0.07,0.07,1
 45157,,51.032617,-3.399666,England,Somerset,0.07,0.05,1
 285630TP,0.0,51.288167,-0.337196,England,Surrey,0.07,0,1
@@ -872,7 +872,7 @@ E24141,,52.307124,1.153055,England,Suffolk,0.07,0,1
 531179,0.0,51.460233,-2.609517,England,City of Bristol,0.07,0.2,1
 3096,0.0,52.615214,-2.152813,England,Wolverhampton,0.07,0,1
 246726TP,0.0,51.610639,-0.312441,England,London Borough of Harrow,0.07,0,1
-54371,0.2,54.419203,-1.515299,England,North Yorkshire,0.07,0.06,1
+54371,0.0,54.419203,-1.515299,England,North Yorkshire,0.07,0.06,1
 E8040,0.0,50.930862,0.267671,England,East Sussex,0.07,0,1
 47164,0.0,50.501188,-4.060758,England,Devon,0.07,0.14,1
 562811,,53.560873,-2.141109,England,Oldham,0.07,0.07,1
@@ -1266,7 +1266,7 @@ E71440,0.0,51.277138,-1.712499,England,Wiltshire,0.07,0.04,1
 115649,0.0,55.73251416,-4.350287842,Scotland,East Renfrewshire,0.08,0,2
 234315,0.0,57.01121062,-4.336367491,Scotland,Highland,0.08,0.08,2
 335620,0.0,56.2047855,-2.78271364,Scotland,Fife,0.08,0,2
-536844,0.05,55.72543649,-4.445306033,Scotland,East Ayrshire,0.08,0.11,2
+536844,0.0,55.72543649,-4.445306033,Scotland,East Ayrshire,0.08,0.11,2
 300383,0.0,55.94300475,-4.172710018,Scotland,East Dunbartonshire,0.08,0,2
 11368,0.0,56.33136897,-2.863918962,Scotland,Fife,0.08,0,2
 234319,0.0,58.55872143,-4.002604762,Scotland,Highland,0.08,0.08,2
