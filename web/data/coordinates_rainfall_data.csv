@@ -60,7 +60,7 @@ E46612,0.0,53.346199,0.015208,England,Lincolnshire,0.07,0,1
 E7055,0.0,52.327013,-1.00142,England,West Northamptonshire,0.07,0.02,1
 E7045,0.0,52.185547,-0.867095,England,West Northamptonshire,0.07,0.02,1
 44200,0.0,50.837132,-2.59994,England,Dorset,0.07,0.17,1
-58461,0.0,53.979278,-1.646973,England,North Yorkshire,0.07,0.06,1
+58461,0.2,53.979278,-1.646973,England,North Yorkshire,0.07,0.06,1
 E4530,0.0,51.156945,1.009589,England,Kent,0.07,0.01,1
 1339,0.0,52.718219,-2.570654,England,Telford and Wrekin,0.07,0.2,1
 564769,,53.300189,-2.155251,England,Cheshire East,0.07,0.14,1
@@ -382,9 +382,9 @@ E4540,0.0,51.202987,0.784947,England,Kent,0.07,0.01,1
 46108,0.0,50.641897,-3.877381,England,Devon,0.07,0.14,1
 E22876,,51.736858,0.480165,England,Essex,0.07,0,1
 44103,0.0,50.707087,-2.698828,England,Dorset,0.07,0.17,1
-256230TP,0.0,51.749085,-1.272057,England,Oxfordshire,0.07,0.07,1
+256230TP,0.4,51.749085,-1.272057,England,Oxfordshire,0.07,0.07,1
 274178TP,0.0,51.667285,-0.923447,England,Buckinghamshire,0.07,0.07,1
-E2365,0.0,52.632078,-0.313309,England,City of Peterborough,0.07,0,1
+E2365,0.1,52.632078,-0.313309,England,City of Peterborough,0.07,0,1
 3652,0.0,52.836792,-1.251041,England,Nottinghamshire,0.07,0,1
 596026,,54.849851,-3.310562,England,Cumberland,0.07,0.07,1
 596026,0.0,54.849851,-3.310562,England,Cumberland,0.07,0.07,1
@@ -774,7 +774,7 @@ E24732,0.0,52.516458,0.988183,England,Norfolk,0.07,0,1
 45183,0.0,51.114443,-3.795033,England,Devon,0.07,0.14,1
 3288,0.0,52.542109,-1.696942,England,Warwickshire,0.07,0.13,1
 46103,0.0,50.47913,-3.760983,England,Devon,0.07,0.14,1
-E1966,0.0,52.5771,-0.125035,England,City of Peterborough,0.07,0,1
+E1966,0.6,52.5771,-0.125035,England,City of Peterborough,0.07,0,1
 584772,0.0,54.328305,-2.694209,England,Westmorland and Furness,0.07,0.16,1
 53111,0.0,51.315105,-2.495674,England,Bath and North East Somerset,0.07,0.05,1
 52149,0.0,50.937299,-2.527224,England,Dorset,0.07,0.17,1
@@ -990,7 +990,7 @@ E82120,0.0,51.116609,-3.940857,England,Devon,0.07,0.14,1
 NelsonGC,0.0,53.820527,-2.210336,England,Lancashire,0.07,0.08,1
 575092,0.0,53.742978,-2.323663,England,Lancashire,0.07,0.08,1
 E82920,0.0,50.598409,-3.460219,England,Devon,0.07,0.14,1
-E82960,0.0,50.475407,-3.581856,England,Torbay,0.07,0.45,1
+E82960,0.5,50.475407,-3.581856,England,Torbay,0.07,0.45,1
 1775,0.0,52.27751,-1.599081,England,Warwickshire,0.07,0.13,1
 E84540,0.0,51.134635,-4.240361,England,Devon,0.07,0.14,1
 E84360,0.0,50.799653,-3.737529,England,Devon,0.07,0.14,1
