@@ -10,7 +10,7 @@ E1310,,52.493886,-0.649292,England,North Northamptonshire,0.07,0,1
 3404,0.0,53.287863,-1.579192,England,Derbyshire,0.07,0.07,1
 3014,0.0,52.886657,-2.182004,England,Staffordshire,0.07,0.14,1
 3901,0.0,53.305797,-1.088289,England,Nottinghamshire,0.07,0,1
-3999,0.0,52.564065,-1.199634,England,Leicestershire,0.07,0,1
+3999,0.2,52.564065,-1.199634,England,Leicestershire,0.07,0,1
 1412,0.0,52.47914,-2.975413,England,Shropshire,0.07,0.16,1
 Not_Specified,,50.778033,-2.848812,England,Dorset,0.07,0.17,1
 Not_Specified,,50.778033,-2.848812,England,Dorset,0.07,0.17,1
@@ -174,7 +174,7 @@ E24763,0.0,51.949875,-0.766824,England,Buckinghamshire,0.07,0.07,1
 E7780,0.0,50.80213,0.081187,England,East Sussex,0.07,0,1
 43104,0.0,51.220377,-1.669896,England,Wiltshire,0.07,0.04,1
 248332TP,0.0,51.672207,-1.952948,England,Gloucestershire,0.07,0.1,1
-3816,0.0,53.130665,-1.23847,England,Nottinghamshire,0.07,0,1
+3816,0.2,53.130665,-1.23847,England,Nottinghamshire,0.07,0,1
 31555,0.0,54.469846,-1.099639,England,North Yorkshire,0.07,0.06,1
 E1320,0.0,51.202399,0.077705,England,Kent,0.07,0.01,1
 46100,0.0,50.390977,-3.70144,England,Devon,0.07,0.14,1
@@ -261,7 +261,7 @@ E9290,0.0,51.04624,-0.400084,England,West Sussex,0.07,0.04,1
 1082,0.0,52.186855,-1.418519,England,Warwickshire,0.07,0.13,1
 1121,0.0,52.718322,-2.717219,England,Shropshire,0.07,0.16,1
 261021TP,0.0,51.653876,-1.288038,England,Oxfordshire,0.07,0.07,1
-1770,0.0,52.288216,-1.222206,England,West Northamptonshire,0.07,0.02,1
+1770,0.2,52.288216,-1.222206,England,West Northamptonshire,0.07,0.02,1
 602253,0.0,54.779014,-2.608625,England,Westmorland and Furness,0.07,0.16,1
 288504TP,0.0,51.349274,0.009666,England,London Borough of Bromley,0.07,0,1
 269627TP,0.0,51.345161,-1.239706,England,Hampshire,0.07,0.07,1
@@ -406,7 +406,7 @@ E22231,0.0,51.999613,-0.629985,England,Central Bedfordshire,0.07,0,1
 E24879,0.0,51.616598,0.593505,England,Essex,0.07,0,1
 240201TP,0.0,51.884151,-0.454782,England,Borough of Luton,0.07,0,1
 47163,0.0,50.366737,-4.230702,England,Cornwall,0.07,0.08,1
-1165,0.0,52.205609,-1.605581,England,Warwickshire,0.07,0.13,1
+1165,0.2,52.205609,-1.605581,England,Warwickshire,0.07,0.13,1
 1155,0.0,52.417004,-1.12584,England,Leicestershire,0.07,0,1
 49106,,50.639798,-4.675005,England,Cornwall,0.07,0.08,1
 280826TP,0.0,51.226121,-0.774805,England,Surrey,0.07,0,1
@@ -447,7 +447,7 @@ E7075,0.0,52.490034,-0.666347,England,North Northamptonshire,0.07,0,1
 49104,0.0,50.509966,-4.568918,England,Cornwall,0.07,0.08,1
 586820,0.0,54.444792,-3.103284,England,Westmorland and Furness,0.07,0.16,1
 4103,,53.114911,-2.223306,England,Cheshire East,0.07,0.14,1
-550148,0.0,53.410189,-3.10942,England,Wirral,0.07,0.5,1
+550148,0.1,53.410189,-3.10942,England,Wirral,0.07,0.5,1
 594202,0.0,54.58826,-3.316076,England,Cumberland,0.07,0.07,1
 3025,0.0,52.701554,-2.119078,England,Staffordshire,0.07,0.14,1
 575384,0.0,53.790306,-2.422692,England,Lancashire,0.07,0.08,1
@@ -605,7 +605,7 @@ E1691,,51.100206,0.007416,England,East Sussex,0.07,0,1
 E1645,0.0,53.664551,-0.343494,England,North Lincolnshire,0.07,0,1
 E7130,0.0,53.534467,-0.499466,England,North Lincolnshire,0.07,0,1
 3603,0.0,53.079174,-0.867665,England,Nottinghamshire,0.07,0,1
-51102,0.034,51.117739,-3.349372,England,Somerset,0.07,0.05,1
+51102,0.01,51.117739,-3.349372,England,Somerset,0.07,0.05,1
 E7180,0.0,50.903167,0.47968,England,East Sussex,0.07,0,1
 E7170,0.0,53.077492,-0.622888,England,Lincolnshire,0.07,0,1
 E2476,0.0,52.252632,-1.146653,England,West Northamptonshire,0.07,0.02,1
@@ -690,7 +690,7 @@ E14850,0.0,50.626578,-1.225903,England,Isle of Wight,0.07,0.01,1
 52147,0.0,51.053779,-2.892367,England,Somerset,0.07,0.05,1
 E23470,0.0,52.191671,1.4844,England,Suffolk,0.07,0,1
 E1457,0.0,53.275431,-0.63753,England,Lincolnshire,0.07,0,1
-560557,0.0,53.431001,-2.352893,England,Trafford,0.07,0.15,1
+560557,0.1,53.431001,-2.352893,England,Trafford,0.07,0.15,1
 47281,0.0,54.275194,-2.263325,England,North Yorkshire,0.07,0.06,1
 52150,0.0,51.005958,-2.643449,England,Somerset,0.07,0.05,1
 61431,0.0,54.163943,-2.152346,England,North Yorkshire,0.07,0.06,1
