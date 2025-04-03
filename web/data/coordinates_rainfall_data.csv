@@ -539,7 +539,7 @@ E4080,0.0,51.258867,1.033447,England,Kent,0.07,0.01,1
 287451TP,0.0,51.308021,-0.16144,England,Surrey,0.07,0,1
 E12160,0.0,50.942234,-1.227791,England,Hampshire,0.07,0.07,1
 53106,0.0,51.474338,-2.127367,England,Wiltshire,0.07,0.04,1
-52225,0.056,51.260327,-2.806074,England,Somerset,0.07,0.05,1
+52225,0.013,51.260327,-2.806074,England,Somerset,0.07,0.05,1
 265038TP,0.0,51.543602,-1.343114,England,West Berkshire,0.07,0.06,1
 598147,,54.504409,-2.241634,England,Westmorland and Furness,0.07,0.16,1
 417417TP,0.0,51.466604,-0.571144,England,Royal Borough of Windsor and Maidenhead,0.07,0,1
@@ -681,7 +681,7 @@ E21589,0.0,52.080162,1.29614,England,Suffolk,0.07,0,1
 3683,0.0,52.697431,-1.117291,England,Leicestershire,0.07,0,1
 28502,0.0,54.504568,-2.141258,England,County Durham,0.07,0.05,1
 3026,0.0,52.79928,-2.275079,England,Staffordshire,0.07,0.14,1
-52223,0.042,51.393485,-2.917648,England,North Somerset,0.07,0,1
+52223,0.014,51.393485,-2.917648,England,North Somerset,0.07,0,1
 E24775,,52.40222,1.542157,England,Suffolk,0.07,0,1
 E21096,0.0,52.583985,0.346152,England,Norfolk,0.07,0,1
 E14850,0.0,50.626578,-1.225903,England,Isle of Wight,0.07,0.01,1
@@ -1007,7 +1007,7 @@ E84500,0.0,51.195117,-3.978505,England,Devon,0.07,0.14,1
 540001RG,0.0,51.527809,0.085279,England,Greater London,0.07,0,1
 Egerton1,0.0,53.636515,-2.448375,England,Blackburn with Darwen,0.07,0.2,1
 605324,0.0,54.583702,-3.237013,England,Cumberland,0.07,0.07,1
-E60880,0.0,51.164146,-1.894828,England,Wiltshire,0.07,0.04,1
+E60880,0.007,51.164146,-1.894828,England,Wiltshire,0.07,0.04,1
 E85220,0.0,51.037989,-3.736447,England,Devon,0.07,0.14,1
 E82840,0.7,50.626112,-3.907858,England,Devon,0.07,0.14,1
 NE063,,53.59597,-1.066946,England,Doncaster,0.07,0,1
@@ -1331,7 +1331,7 @@ E71440,0.0,51.277138,-1.712499,England,Wiltshire,0.07,0.04,1
 1035,0.4,51.755288,-3.1299887,Wales,Blaenau Gwent,0.41,0.4,3
 1036,0.4,51.589311,-3.1640454,Wales,Caerphilly County Borough,0.41,0.33,3
 1037,0.2,51.651951,-3.2967281,Wales,Caerphilly County Borough,0.41,0.33,3
-1038,0.4,51.534456,-3.2272079,Wales,Cardiff,0.41,0,3
+1038,0.2,51.534456,-3.2272079,Wales,Cardiff,0.41,0,3
 1039,0.2,52.253424,-3.6387904,Wales,Powys,0.41,0.29,3
 1040,0.0,51.718341,-3.0303118,Wales,Torfaen,0.41,1.8,3
 1041,0.2,51.689408,-3.2075244,Wales,Caerphilly County Borough,0.41,0.33,3
@@ -1340,7 +1340,7 @@ E71440,0.0,51.277138,-1.712499,England,Wiltshire,0.07,0.04,1
 1044,0.4,51.657853,-3.3975177,Wales,Rhondda Cynon Taf,0.41,0.4,3
 1045,0.0,51.797889,-3.3662566,Wales,Merthyr Tydfil County Borough,0.41,0.5,3
 1046,0.2,51.48559,-3.2672733,Wales,Cardiff,0.41,0,3
-1047,0.2,51.684092,-3.2987023,Wales,Merthyr Tydfil County Borough,0.41,0.5,3
+1047,0.4,51.684092,-3.2987023,Wales,Merthyr Tydfil County Borough,0.41,0.5,3
 1048,0.2,51.681388,-3.5444086,Wales,Rhondda Cynon Taf,0.41,0.4,3
 1049,0.0,51.939018,-3.4015996,Wales,Powys,0.41,0.29,3
 1050,0.0,51.577237,-2.8022824,Wales,Monmouthshire,0.41,0.8,3
@@ -1380,14 +1380,14 @@ E71440,0.0,51.277138,-1.712499,England,Wiltshire,0.07,0.04,1
 1084,0.0,51.811983,-4.0850684,Wales,Carmarthenshire,0.41,0.52,3
 1085,0.0,51.800749,-4.2424719,Wales,Carmarthenshire,0.41,0.52,3
 1086,0.0,51.735134,-3.939118,Wales,Swansea,0.41,0.55,3
-1087,0.0,51.679626,-3.6546251,Wales,Neath Port Talbot,0.41,0.52,3
+1087,0.2,51.679626,-3.6546251,Wales,Neath Port Talbot,0.41,0.52,3
 1088,0.0,51.720656,-3.7544117,Wales,Neath Port Talbot,0.41,0.52,3
 1089,0.2,51.661741,-3.7060829,Wales,Neath Port Talbot,0.41,0.52,3
-1090,0.2,51.749142,-3.5423442,Wales,Rhondda Cynon Taf,0.41,0.4,3
+1090,0.0,51.749142,-3.5423442,Wales,Rhondda Cynon Taf,0.41,0.4,3
 1091,0.2,51.70922,-3.7023257,Wales,Neath Port Talbot,0.41,0.52,3
 1092,0.4,51.635761,-3.5252862,Wales,Bridgend County Borough,0.41,0.13,3
 1093,0.4,51.504862,-3.5398578,Wales,Bridgend County Borough,0.41,0.13,3
-1094,0.0,51.644625,-3.6452708,Wales,Neath Port Talbot,0.41,0.52,3
+1094,0.2,51.644625,-3.6452708,Wales,Neath Port Talbot,0.41,0.52,3
 1095,0.2,51.581417,-3.6196189,Wales,Bridgend County Borough,0.41,0.13,3
 1096,0.2,51.760836,-5.0170933,Wales,Pembrokeshire,0.41,0.57,3
 1097,0.6,51.851752,-4.8887233,Wales,Pembrokeshire,0.41,0.57,3
