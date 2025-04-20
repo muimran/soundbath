@@ -1604,7 +1604,7 @@
                 ]
             },
             "properties": {
-                "rainfall": "0.0",
+                "rainfall": "0.1",
                 "country_code": 1
             }
         },
@@ -1882,7 +1882,7 @@
                 ]
             },
             "properties": {
-                "rainfall": "0.0",
+                "rainfall": "0.1",
                 "country_code": 1
             }
         },
@@ -1966,7 +1966,7 @@
                 ]
             },
             "properties": {
-                "rainfall": "0.0",
+                "rainfall": "0.1",
                 "country_code": 1
             }
         },
@@ -7475,7 +7475,7 @@
                 ]
             },
             "properties": {
-                "rainfall": "0.02",
+                "rainfall": "0.022",
                 "country_code": 1
             }
         },
@@ -7951,7 +7951,7 @@
                 ]
             },
             "properties": {
-                "rainfall": "0.374",
+                "rainfall": "0.052",
                 "country_code": 1
             }
         },
@@ -11348,7 +11348,7 @@
                 ]
             },
             "properties": {
-                "rainfall": "0.0",
+                "rainfall": "0.089",
                 "country_code": 1
             }
         },
