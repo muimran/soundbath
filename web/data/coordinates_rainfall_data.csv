@@ -9,7 +9,7 @@ E1310,,52.493886,-0.649292,England,North Northamptonshire,0.07,0,1
 3307,0.0,53.196879,-1.901908,England,Staffordshire,0.07,0.14,1
 3404,0.0,53.287863,-1.579192,England,Derbyshire,0.07,0.07,1
 3014,0.0,52.886657,-2.182004,England,Staffordshire,0.07,0.14,1
-3901,0.0,53.305797,-1.088289,England,Nottinghamshire,0.07,0,1
+3901,0.4,53.305797,-1.088289,England,Nottinghamshire,0.07,0,1
 3999,0.0,52.564065,-1.199634,England,Leicestershire,0.07,0,1
 1412,0.0,52.47914,-2.975413,England,Shropshire,0.07,0.16,1
 Not_Specified,,50.778033,-2.848812,England,Dorset,0.07,0.17,1
@@ -881,7 +881,7 @@ E2527,0.0,52.191056,-1.087854,England,West Northamptonshire,0.07,0.02,1
 3604,0.0,53.223303,-1.115505,England,Nottinghamshire,0.07,0,1
 E3474,0.0,51.322006,1.228535,England,Kent,0.07,0.01,1
 E46361,0.0,52.939919,-0.043906,England,Lincolnshire,0.07,0,1
-E22335,0.1,51.946435,-0.544307,England,Central Bedfordshire,0.07,0,1
+E22335,0.0,51.946435,-0.544307,England,Central Bedfordshire,0.07,0,1
 E3220,0.0,51.350566,0.74362,England,Kent,0.07,0.01,1
 46107,0.0,50.58221,-3.897607,England,Devon,0.07,0.14,1
 E24854,0.0,51.623807,0.826545,England,Essex,0.07,0,1
@@ -991,7 +991,7 @@ NelsonGC,0.0,53.820527,-2.210336,England,Lancashire,0.07,0.08,1
 575092,0.0,53.742978,-2.323663,England,Lancashire,0.07,0.08,1
 E82920,0.0,50.598409,-3.460219,England,Devon,0.07,0.14,1
 E82960,0.0,50.475407,-3.581856,England,Torbay,0.07,0.45,1
-1775,0.0,52.27751,-1.599081,England,Warwickshire,0.07,0.13,1
+1775,0.1,52.27751,-1.599081,England,Warwickshire,0.07,0.13,1
 E84540,0.0,51.134635,-4.240361,England,Devon,0.07,0.14,1
 E84360,0.0,50.799653,-3.737529,England,Devon,0.07,0.14,1
 E82040,0.0,50.686641,-3.300157,England,Devon,0.07,0.14,1
@@ -1331,7 +1331,7 @@ E71440,0.0,51.277138,-1.712499,England,Wiltshire,0.07,0.04,1
 1035,0.0,51.755288,-3.1299887,Wales,Blaenau Gwent,0.41,0.4,3
 1036,0.0,51.589311,-3.1640454,Wales,Caerphilly County Borough,0.41,0.33,3
 1037,0.0,51.651951,-3.2967281,Wales,Caerphilly County Borough,0.41,0.33,3
-1038,0.0,51.534456,-3.2272079,Wales,Cardiff,0.41,0,3
+1038,0.4,51.534456,-3.2272079,Wales,Cardiff,0.41,0,3
 1039,0.0,52.253424,-3.6387904,Wales,Powys,0.41,0.29,3
 1040,0.0,51.718341,-3.0303118,Wales,Torfaen,0.41,1.8,3
 1041,0.0,51.689408,-3.2075244,Wales,Caerphilly County Borough,0.41,0.33,3
@@ -1340,7 +1340,7 @@ E71440,0.0,51.277138,-1.712499,England,Wiltshire,0.07,0.04,1
 1044,0.0,51.657853,-3.3975177,Wales,Rhondda Cynon Taf,0.41,0.4,3
 1045,0.0,51.797889,-3.3662566,Wales,Merthyr Tydfil County Borough,0.41,0.5,3
 1046,0.0,51.48559,-3.2672733,Wales,Cardiff,0.41,0,3
-1047,1.2,51.684092,-3.2987023,Wales,Merthyr Tydfil County Borough,0.41,0.5,3
+1047,0.0,51.684092,-3.2987023,Wales,Merthyr Tydfil County Borough,0.41,0.5,3
 1048,0.0,51.681388,-3.5444086,Wales,Rhondda Cynon Taf,0.41,0.4,3
 1049,0.0,51.939018,-3.4015996,Wales,Powys,0.41,0.29,3
 1050,0.0,51.577237,-2.8022824,Wales,Monmouthshire,0.41,0.8,3
